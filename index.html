@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To My Forever Valentine ❤️</title>
+    <style>
+        :root {
+            --pink: #ffafbd;
+            --rose: #ffc3a0;
+            --heart-red: #d32f2f;
+            --bg-white: rgba(255, 255, 255, 0.95);
+        }
+
+        body {
+            margin: 0; padding: 0;
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, var(--pink), var(--rose));
+            color: #444; overflow-x: hidden; text-align: center;
+        }
+
+        .heart {
+            position: fixed; font-size: 20px; color: var(--heart-red);
+            animation: float 6s linear infinite; z-index: -1; opacity: 0.7;
+        }
+        @keyframes float {
+            0% { transform: translateY(110vh) scale(0.5); opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+        }
+
+        .container {
+            max-width: 700px; margin: 50px auto; background: var(--bg-white);
+            padding: 40px; border-radius: 30px; box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+            border: 5px double var(--pink);
+        }
+
+        h1 { color: var(--heart-red); font-size: 2.5rem; margin-bottom: 10px; }
+        .timer-box { font-size: 1.2rem; margin: 20px 0; font-weight: bold; color: #7b1fa2; }
+        
+        .section { display: none; animation: fadeIn 1s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .active { display: block; }
+
+        /* Gallery Styling */
+        .memory-img {
+            width: 100%; max-height: 400px; object-fit: cover;
+            border-radius: 15px; border: 3px solid var(--pink);
+            margin: 15px 0;
+        }
+        .caption { font-style: italic; font-size: 1.2rem; color: #555; margin-bottom: 20px; }
+
+        button {
+            background: var(--heart-red); color: white; border: none;
+            padding: 15px 35px; border-radius: 50px; cursor: pointer;
+            font-size: 1.1rem; transition: 0.3s; margin: 5px;
+        }
+        button:hover { transform: translateY(-3px); background: #b71c1c; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div id="intro" class="section active">
+            <h1>Hi Beautiful ❤️</h1>
+            <p>I wanted to make something as unique as you are. We have been together for:</p>
+            <div class="timer-box" id="timer">Calculating our love...</div>
+            <button onclick="next('intro', 'm1')">View Our Memories 🌹</button>
+        </div>
+
+        <div id="m1" class="section">
+            <h2>Memory #1</h2>
+            <img src="1.jpg" class="memory-img" alt="Memory 1">
+            <p class="caption">"The very first day our paths crossed."</p>
+            <button onclick="next('m1', 'm2')">Next Memory ✨</button>
+        </div>
+
+        <div id="m2" class="section">
+            <h2>Memory #2</h2>
+            <img src="2.jpg" class="memory-img" alt="Memory 2">
+            <p class="caption">"That incredible night we couldn't stop laughing."</p>
+            <button onclick="next('m2', 'm1')">Back</button>
+            <button onclick="next('m2', 'm3')">Next ✨</button>
+        </div>
+
+        <div id="m3" class="section">
+            <h2>Memory #3</h2>
+            <img src="3.jpg" class="memory-img" alt="Memory 3">
+            <p class="caption">"Our first long walk where we talked about everything."</p>
+            <button onclick="next('m3', 'm2')">Back</button>
+            <button onclick="next('m3', 'm4')">Next ✨</button>
+        </div>
+
+        <div id="m4" class="section">
+            <h2>Memory #4</h2>
+            <img src="4.jpg" class="memory-img" alt="Memory 4">
+            <p class="caption">"Remember the food here? Still craving it!"</p>
+            <button onclick="next('m4', 'm3')">Back</button>
+            <button onclick="next('m4', 'm5')">Next ✨</button>
+        </div>
+
+        <div id="m5" class="section">
+            <h2>Memory #5</h2>
+            <img src="5.jpg" class="memory-img" alt="Memory 5">
+            <p class="caption">"A quiet moment I'll never forget."</p>
+            <button onclick="next('m5', 'm4')">Back</button>
+            <button onclick="next('m5', 'm6')">Next ✨</button>
+        </div>
+
+        <div id="m6" class="section">
+            <h2>Memory #6</h2>
+            <img src="6.jpg" class="memory-img" alt="Memory 6">
+            <p class="caption">"One of my favorite photos of us."</p>
+            <button onclick="next('m6', 'm5')">Back</button>
+            <button onclick="next('m6', 'm7')">Next ✨</button>
+        </div>
+
+        <div id="m7" class="section">
+            <h2>Memory #7</h2>
+            <img src="7.jpg" class="memory-img" alt="Memory 7">
+            <p class="caption">"The day we decided to take on the world together."</p>
+            <button onclick="next('m7', 'm6')">Back</button>
+            <button onclick="next('m7', 'm8')">Next ✨</button>
+        </div>
+
+        <div id="m8" class="section">
+            <h2>Memory #8</h2>
+            <img src="8.jpg" class="memory-img" alt="Memory 8">
+            <p class="caption">"You look absolutely radiant here."</p>
+            <button onclick="next('m8', 'm7')">Back</button>
+            <button onclick="next('m8', 'm9')">Next ✨</button>
+        </div>
+
+        <div id="m9" class="section">
+            <h2>Memory #9</h2>
+            <img src="9.jpg" class="memory-img" alt="Memory 9">
+            <p class="caption">"That sunset was beautiful, but you were more beautiful."</p>
+            <button onclick="next('m9', 'm8')">Back</button>
+            <button onclick="next('m9', 'm10')">Next ✨</button>
+        </div>
+
+        <div id="m10" class="section">
+            <h2>Memory #10</h2>
+            <img src="10.jpg" class="memory-img" alt="Memory 10">
+            <p class="caption">"To all the memories we haven't made yet."</p>
+            <button onclick="next('m10', 'm9')">Back</button>
+            <button onclick="next('m10', 'reasons')">Final Surprise... 🎁</button>
+        </div>
+
+        <div id="reasons" class="section">
+            <h2>Reasons I Love You...</h2>
+            <div class="reason-card" id="reasonText">"Your smile lights up my entire world."</div>
+            <button onclick="showNextReason()">Show Me Another ✨</button>
+            <br><br>
+            <button onclick="next('reasons', 'final')" style="background: #9c27b0;">The Big Question... 💍</button>
+        </div>
+
+        <div id="final" class="section">
+            <h1>One last thing... ❤️</h1>
+            <p>You make every day feel like Valentine's Day.</p>
+            <div style="font-size: 60px;">👩‍❤️‍👨</div>
+            <h2>Will you be my Valentine?</h2>
+            <button onclick="celebrate()">YES! ❤️</button>
+            <button onmouseover="moveButton(this)" style="background: #999;">No</button>
+        </div>
+    </div>
+
+    <script>
+        // Start Date
+        const startDate = new Date("2023-05-04T00:00:00"); 
+
+        function updateTimer() {
+            const now = new Date();
+            const diff = now - startDate;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const mins = Math.floor((diff / (1000 * 60)) % 60);
+            document.getElementById('timer').innerHTML = `${days} Days, ${hours} Hours, and ${mins} Minutes`;
+        }
+        setInterval(updateTimer, 1000);
+
+        const reasons = [
+            "Your smile lights up my entire world.",
+            "Our late night talks and deep secrets.",
+            "How beautiful you look even when you just woke up.",
+            "The way you light that J.",
+            "You are my safest place and my greatest adventure."
+        ];
+        let reasonIdx = 0;
+        function showNextReason() {
+            reasonIdx = (reasonIdx + 1) % reasons.length;
+            document.getElementById('reasonText').innerText = `"${reasons[reasonIdx]}"`;
+        }
+
+        function next(curr, nextId) {
+            document.getElementById(curr).style.display = 'none';
+            document.getElementById(nextId).style.display = 'block';
+        }
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 6000);
+        }
+        setInterval(createHeart, 300);
+
+        function moveButton(btn) {
+            btn.style.position = 'absolute';
+            btn.style.top = Math.random() * 80 + 'vh';
+            btn.style.left = Math.random() * 80 + 'vw';
+        }
+
+        function celebrate() {
+            alert("I KNEW IT! I love you so much! ❤️ Happy Valentine's Day!");
+        }
+    </script>
+</body>
+</html>
